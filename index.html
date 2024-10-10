@@ -83,8 +83,8 @@
                     <input type="text" id="length">
                 </div>
                 <div>
-                    <label for="rectangle">Result</label>
-                    <input type="text" id="rectangle" readonly>
+                    <label for="rectangle_area">Result</label>
+                    <input type="text" id="rectangle_area" readonly>
                 </div>
                 <hr>
                 <button onclick="getRectangleArea()">Calculate</button>
@@ -96,45 +96,31 @@
 
         <script>
             function getCircleArea(){
-                const radius = parseFloat(document.getElementById("radius").value.trim());
-                if (isNaN(radius) || radius <= 0) {
-                    alert("Please enter a valid positive number for the radius.");
-                    return;
-                }
-                const area = Math.PI * Math.pow(radius, 2);
-                document.getElementById("circle-area").value = area.toFixed(2);
+                let radius = document.getElementById("radius").value;
+                console.log(radius);
+                let area = Math.PI * (Math.pow(radius, 2));
+                console.log(area);
+                document.getElementById("circle_area").value = area.toFixed(2);
             }
 
             function getTriangleArea(){
-                const base = parseFloat(document.getElementById("base").value.trim());
-                const height = parseFloat(document.getElementById("height").value.trim());
-                if (isNaN(base) || isNaN(height) || base <= 0 || height <= 0) {
-                    alert("Please enter valid positive numbers for the base and height.");
-                    return;
-                }
-                const area = 0.5 * base * height;
-                document.getElementById("triangle-area").value = area.toFixed(2);
+                let base = document.getElementById("base").value;
+                let height = document.getElementById("height").value;
+                let area = 0.5 * base * height;
+                document.getElementById("triangle_area").value = area.toFixed(2);
             }
 
             function getSquareArea(){
-                const side = parseFloat(document.getElementById("side").value.trim());
-                if (isNaN(side) || side <= 0) {
-                    alert("Please enter a valid positive number for the side length.");
-                    return;
-                }
-                const area = Math.pow(side, 2);
-                document.getElementById("square-area").value = area.toFixed(2);
+                let side = document.getElementById("side").value;
+                let area = Math.pow(side, 2);
+                document.getElementById("square_area").value = area.toFixed(2);
             }
 
             function getRectangleArea(){
-                const width = parseFloat(document.getElementById("width").value.trim());
-                const length = parseFloat(document.getElementById("length").value.trim());
-                if (isNaN(width) || isNaN(length) || width <= 0 || length <= 0) {
-                    alert("Please enter valid positive numbers for the width and length.");
-                    return;
-                }
-                const area = width * length;
-                document.getElementById("rectangle-area").value = area.toFixed(2);
+                let width = document.getElementById("width").value;
+                let length = document.getElementById("length").value;
+                let area = width * length;
+                document.getElementById("rectangle_area").value = area.toFixed(2);
             }
         </script>
     </body>
